@@ -124,16 +124,16 @@ ylabel("age")
 %% GMM Model 
 clc
 % estimate best k
-AIC = zeros(1,4);
-GMModels = cell(1,4);
-options = statset('MaxIter',500);
-for k = 1:4
-    GMModels{k} = fitgmdist(features,k,'Options',options,'CovarianceType','diagonal');
-    AIC(k)= GMModels{k}.AIC;
-end
-
-[minAIC,numComponents] = min(AIC);
-numComponents;
+% AIC = zeros(1,4);
+% GMModels = cell(1,4);
+% options = statset('MaxIter',500);
+% for k = 1:4
+%     GMModels{k} = fitgmdist(features,k,'Options',options,'CovarianceType','diagonal');
+%     AIC(k)= GMModels{k}.AIC;
+% end
+% 
+% [minAIC,numComponents] = min(AIC);
+% numComponents;
 %%
 n = 2016; % number of observations
 c = cvpartition(n,'KFold',10);
