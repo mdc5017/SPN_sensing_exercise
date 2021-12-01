@@ -4,7 +4,7 @@ clear
 
 lead = 2;
 %% Building data
-build_data =  false;
+build_data =  true;
 features = zeros(2016,6); % data matrix [features labels] modify to add more features
 labels = zeros(2016,1);
 n = 1;
