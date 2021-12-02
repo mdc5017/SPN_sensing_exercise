@@ -58,7 +58,7 @@ save('ECG_leads\features_label.mat', 'data_feat_label');
 %     'HyperparameterOptimizationOptions',struct('AcquisitionFunctionName',...
 %     'expected-improvement-plus'));
 
-%%
+%% Naive-Bayes classifier
 
 labels(any(ismissing(features),2), :) = [];
 features( any(ismissing(features),2), :) = [];
@@ -70,7 +70,7 @@ accuracy = sum(labels == isLabels1,'all')/numel(isLabels1)
 sensitivity  = ConfusionMat(1,1)/(ConfusionMat(1,1)+ConfusionMat(1,2))
 specificity = ConfusionMat(2,2)/(ConfusionMat(2,1)+ConfusionMat(2,2))
 
-%%
+%% Cross-validation
 
 n = 2016; % number of observations
 c = cvpartition(n,'KFold',10);
